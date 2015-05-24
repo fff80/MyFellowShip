@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<!-- 配置为开发模式 -->
+    <constant name="struts.devMode" value="true" />
+    <!-- 把扩展名配置为action -->
+    <constant name="struts.action.extension" value="do" />
+    <!-- 把主题配置为simple -->
+    <constant name="struts.ui.theme" value="simple" />
+    
+    <package name="default" namespace="/" extends="json-default">
+    	<interceptors>
+    		<!-- 重新定义默认的拦截器栈 -->
+    		<interceptor-stack name="defaultStack">
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    		</interceptor-stack>
+    	</interceptors>
+    </package>
+	<package name="system" extends="json-default" namespace="/system">
+		<interceptors>
+			<interceptor name="HibernateSession" class="com.hdos.utils.AppInterceptor"></interceptor>
+			<interceptor name="auth" class="com.hdos.utils.authInterceptor"></interceptor>
+			<interceptor-stack name="SHInterceptor">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<!--<interceptor-ref name="auth"></interceptor-ref>
+				--><interceptor-ref name="HibernateSession"></interceptor-ref>
+				<interceptor-ref name="HibernateSession"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="SHInterceptor"></default-interceptor-ref>
+	 <!-- 登录管理 -->
+	    <action name="login_*" class="com.hdos.action.LoginAction" method="{1}">
+			<result name="mp" type="json">
+				<param name="root">mp</param>
+			</result>
+			<result name="logout" type="redirect">../login.jsp</result>
+		</action>
+		 <action name="user_*" class="com.hdos.action.UserAction" method="{1}">
+			<result name="list" type="json">
+				<param name="root">pb</param>
+			</result>
+			<result name="sellist" type="json">
+				<param name="root">list</param>
+			</result>
+			<result name="mp" type="json">
+				<param name="root">mp</param>
+			</result>
+			<result name="edit">../system/user_edit.jsp</result>
+			<result name="export" type="stream">
+				<param name="contentType">application/vnd.ms-excel</param>
+	   		 	<param name="inputName">inputStream</param>
+	   		 	<param name="contentDisposition">attachment;filename="${filename}"</param>
+	   		 	<param name="bufferSize">10240</param>
+			</result>
+		</action>
+    </package> 
+    <!-- Add packages here -->
+
+</struts>

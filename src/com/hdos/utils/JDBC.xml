@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<bean>
+		<driverClass>com.mysql.jdbc.Driver</driverClass>
+		<url>jdbc:mysql://204.152.218.57:3306/ageoflove?characterEncoding=utf8&amp;autoReconnect=true</url>
+		<username>root</username>
+		<password>456123</password>
+		<minpool>1</minpool>
+		<maxpool>100</maxpool>
+		<timeout>10</timeout>
+		
+	</bean>
+</content> 
+	

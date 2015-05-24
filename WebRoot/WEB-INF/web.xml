@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<!-- 配置Struts2的核心的过滤器 -->
+	
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>com.hdos.utils.PicFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>appFilter</filter-name>
+		<filter-class>com.hdos.utils.AppFilter</filter-class>
+		<init-param>
+		  <description>不拦截的内容</description>
+		  <param-name>uri-pass</param-name>
+		  <param-value>ueditorup/jsp/imageUp.jsp,ueditorup/jsp/fileUp.jsp,login.jsp,js/image.jsp,index.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>appFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 配置JSON-RPC 开始-->
+	<servlet>
+		<servlet-name>com.metaparadigm.jsonrpc.JSONRPCServlet</servlet-name>
+		<servlet-class>com.metaparadigm.jsonrpc.JSONRPCServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>com.metaparadigm.jsonrpc.JSONRPCServlet</servlet-name>
+		<url-pattern>/JSON-RPC</url-pattern>
+	</servlet-mapping>
+	
+	<!-- http service start-->
+	<servlet>
+		<servlet-name>mobileService</servlet-name>
+		<servlet-class>com.hdos.service.HttpService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mobileService</servlet-name>
+		<url-pattern>/service</url-pattern>
+	</servlet-mapping>
+	<!-- end -->
+</web-app>

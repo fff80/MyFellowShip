@@ -1,0 +1,252 @@
+@charset "utf-8";
+/*
+名称：样式表
+时间：2011-12-22
+创建人：lou
+*/
+#top{
+margin-left: 220px;
+}
+#table{
+	margin-left: 150px;
+	padding-top: 10px;
+}
+#table tr td{
+	line-height:30px;
+}
+#tip{
+ margin-left: 100px;
+ font-size: 13px;
+}
+BODY{
+	font-family:"宋体";
+    font-size:12px; 
+    line-height:14px;  
+}
+a {poorfish:expression(this.onclick=function kill(){})}
+a:link   {   
+  text-decoration:none;   
+  }   
+  a:visited   {   
+  text-decoration:none;   
+  }   
+  a:hover   {   
+  text-decoration:none;   
+  }     
+FORM{
+	padding:0;
+	margin:0;
+	}
+	
+.div_fen{
+	line-height:14px;  
+	font-family:"宋体";
+	font-size:12px;
+	text-overflow:ellipsis;
+	}
+	td{white-space: nowrap;}
+	
+TD{
+	line-height:14px;  
+	font-family:"宋体";
+	font-size:12px;
+	text-overflow:ellipsis;
+}
+.usv_DIV{
+	line-height:14px;  
+	font-family:"宋体";
+	font-size:12px;
+	text-overflow:ellipsis;
+}
+.input_search{
+    height: 18px;
+    padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+}
+/*按钮样式*/
+.button_sty{
+    border-style:none;
+    background-color:Transparent;
+    background-image:url(../images_button/kong.gif);
+    width:91px;
+    height:22px;
+    vertical-align:middle;
+    cursor:hand;
+}
+/*图片显示手型*/
+img{
+    cursor: pointer;
+}
+select{
+	 width:335px;
+}
+/*页面调用 带点头的边框 向左箭头*/
+.left_sty{
+position:absolute;
+             top:0px;
+             left:0px;
+             display:block;
+             height:16px;
+             border:1px solid #ff0000;
+             background-color:#ffffff;
+             z-index:100;
+             margin:10px;
+             color:#ff0000;
+             line-height:16px;
+             font-size:12px;
+             padding-right:6px;
+             padding-left:6px;
+             }
+.left_sty span{
+position:absolute;
+	font-size:0;
+	line-height:0;
+	display:block;
+}
+.left_sty span.botleft{
+    top:3px;
+    left:-11px;
+	height:-10px;
+	width:-10px;
+	border-width:5px;
+	border-style:dashed solid  dashed dashed;
+	border-color:transparent #ff0000 transparent transparent;
+}
+.left_sty span.topleft{
+    top:3px;
+    left:-9px;
+	height:0;
+    width:0;
+	border-width:5px;
+	border-style:dashed solid  dashed dashed;
+	border-color:transparent #ffffff transparent transparent;	
+}
+
+/*页面调用 带点头的边框 向上箭头*/
+.top_sty{
+	position:absolute;
+	top:5px;
+	left:0px;
+	display:block;
+	height:16px;
+	width:100px;
+	border:1px solid #ff0000;
+	background-color:#ffffff;
+	z-index:100;
+	margin:10px;
+	color:#ff0000;
+	text-align:center;
+	line-height:16px;
+	font-size:12px;
+	padding-right:6px;
+    padding-left:6px;
+}
+.top_sty span{
+position:absolute;
+	font-size:0;
+	line-height:0;
+	display:block;
+}
+.top_sty span.bottop{
+	top:-11px;
+	left:68px;
+	height:-10px;
+	width:-10px;
+	border-width:5px;
+	border-style:dashed dashed solid dashed;
+	border-color:transparent transparent #ff0000 transparent;
+}
+.top_sty span.toptop{
+	top:-9px;
+	left:68px;
+	height:0;
+	width:0;
+	border-width:5px;
+	border-style:dashed dashed solid dashed;
+	border-color:transparent transparent #ffffff transparent;
+}
+
+
+.usv_A{color:#5EC70B;font-weight:bold;font-size:12px;font-stretch:1px;font-size-adjust:2px;}
+.usv_B{color:#5EC7FB;font-weight:bold;font-size:12px;font-stretch:1px;font-size-adjust:2px;}
+.usv_C{color:#5E4B00;font-weight:bold;font-size:14px;font-stretch:1px;font-size-adjust:2px;}
+.usv_D{color:#FF3f6D;font-stretch:1px;font-size:12px;font-size-adjust:2px;} 
+
+/*container*/
+#ym-window{
+	background:#fff;overflow:hidden;
+	font-size:12px;font-family:'宋体';
+	overflow:hidden;
+}
+
+/*header*/
+.ym-tl{padding-left:3px;background:#CFD7EC url(images/title_bg_left.gif) no-repeat 0 0}
+.ym-tr{padding-right:3px;background:#CFD7EC url(images/title_bg_right.gif) no-repeat right 0;}
+.ym-tc{background:#CFD7EC url(images/title_bg_center.gif) repeat-x 0 0;overflow:hidden;height:25px;line-height:25px;}
+.ym-ttc{height:3px}
+.ym-header-text{font-size:12px;font-weight:bold;color:#fff;margin-left:5px;float:left}
+.ym-header-tools{float:right;margin-top:5px}
+.ym-header-tools strong{display:none}
+
+/*body*/
+.ym-ml{background:url(images/win_l.gif) repeat-y 0 0;padding-left:3px;}
+.ym-mr{background:url(images/win_r.gif) repeat-y right 0;padding-right:3px;}
+.ym-mc{background:url(images/content_bg.gif) repeat-x 0 0;padding:0}
+.ym-body{overflow:hidden;padding:0;font-size:12px;}
+
+/*button*/
+.ym-btn{text-align:center}
+
+/*footer*/
+.ym-bl{background:url(images/win_lb.gif) no-repeat 0 bottom;padding-left:3px}
+.ym-br{background:url(images/win_rb.gif) no-repeat right bottom;padding-right:3px}
+.ym-bc{background:url(images/win_b.gif) repeat-x 0 bottom;height:3px;font-size:3px}
+
+/*icon*/
+.ymPrompt_alert{
+	padding-left:90px;
+	background:url(images/info.gif) no-repeat 20px 50%
+}
+.ymPrompt_succeed{
+	padding-left:90px;
+	background:url(images/right.gif) no-repeat 20px 50%
+}
+.ymPrompt_error{
+	padding-left:90px;
+	background:url(images/err.gif) no-repeat 20px 50%
+}
+.ymPrompt_confirm{
+	padding-left:90px;
+	background:url(images/ask.gif) no-repeat 20px 50%
+}
+.ymPrompt_alert .ym-content,.ymPrompt_succeed .ym-content,.ymPrompt_error .ym-content,.ymPrompt_confirm .ym-content{padding:50px 0 0}
+/*图标公共定义*/
+.ym-header-tools div{
+	cursor:pointer;
+	width:16px;height:16px;float:left;margin:0 1px
+}
+.ymPrompt_close{
+	background:url(images/ico.gif) no-repeat -16px 0;
+}
+.ymPrompt_max{
+	background:url(images/ico.gif) no-repeat 0 -16px;
+}
+.ymPrompt_min{
+	background:url(images/ico.gif) no-repeat 0 0;
+}
+.ymPrompt_normal{
+	background:url(images/ico.gif) no-repeat -16px -16px;
+}
+
+/*取消确认按钮样式*/
+input.btnStyle{
+	background:url(images/btn_bg.gif) no-repeat;
+	width:80px;height:21px;line-height:21px;
+	font-size:12px;color:#183C94;border:0;margin:10px 0
+}
